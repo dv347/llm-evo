@@ -1,0 +1,18 @@
+<predefined> ::= 'loopBreakConst = 200'
+'i0 = int(); i1 = int(); i2 = int()'
+'b0 = bool(); b1 = bool(); b2 = bool()'
+'forCounter = int()'
+'res0 = []'
+<code>
+<code> ::= <statement>'\n'
+<statement> ::= <simple_stmt>|<compound_stmt>
+<simple_stmt> ::= 'res0.append('<int>')'|<int_assign>
+<compound_stmt> ::= <for>|<if>
+<for> ::= 'loopBreak = 0\nfor forCounter in '<list_int>':{:\n'<code>'\nif loopBreak > loopBreakConst or stop.value:{:\nbreak\n:}loopBreak += 1\n:}'
+<bool> ::= <int>' == 0'
+<if> ::= 'if '<bool>':{:\n'<code>':}'
+<int_var> ::= 'i0'|'i1'|'i2'|'in0'|'in1'|'in2'|'forCounter'
+<int_assign> ::= <int_var>' = '<int>
+<int> ::= <int_var>|'( '<int>' '<arith_ops>' '<int>' )'|'mod('<int>','<int>')'
+<arith_ops> ::= '-'
+<list_int> ::= 'list(saveRange('<int>','<int>'))'

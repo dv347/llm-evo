@@ -1,0 +1,10 @@
+<predefined> ::= 'i0 = int()\nres0 = float()\n'<code>
+<code> ::= <code><assign>'\n'|<assign>'\n'
+<assign> ::= <int_assign>|<float_assign>
+<int_assign> ::= <int_var>' = '<int>
+<float_assign> ::= <float_var>' = '<float>
+<arith_ops> ::= '-'
+<int> ::= 'int('<float_var>')'
+<int_var> ::= 'i0'
+<float> ::= <float>' '<arith_ops>' '<int>|<int>' '<arith_ops>' '<float>
+<float_var> ::= 'in0'|'res0'

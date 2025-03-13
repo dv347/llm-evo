@@ -1,0 +1,10 @@
+<predefined> ::= 'i0 = int(); i1 = int(); i2 = int()'
+'res0 = int()'
+<code>
+<code> ::= <code><int_assign>'\n'|<int_assign>'\n'
+<int_var> ::= 'i0'|'i1'|'i2'|'res0'|'in0'|'in1'|'in2'|'in3'
+<int_assign> ::= <int_var>' = '<int>|<int_var>' '<arith_ops>'= '<int>
+<int> ::= <int_var>|<arith_prefix><int>|'( '<int>' '<arith_ops>' '<int>' )'|<int_arith_ops_protected>'('<int>','<int>')'|'min('<int>', '<int>')'|'max('<int>', '<int>')'
+<arith_ops> ::= '+'|'-'
+<int_arith_ops_protected> ::= 'mod'
+<arith_prefix> ::= '+'|'-'

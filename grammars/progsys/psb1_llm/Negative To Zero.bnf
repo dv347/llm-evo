@@ -1,0 +1,16 @@
+<predefined> ::= 'loopBreakConst = 200'
+'i0 = int(); i1 = int(); i2 = int()'
+'res0 = []'
+<code>
+<code> ::= <code><statement>'\n'|<statement>'\n'
+<statement> ::= <simple_stmt>|<compound_stmt>
+<simple_stmt> ::= <call>|<assign>
+<compound_stmt> ::= <for>
+<call> ::= <list_int_var>'.append('<int>')'
+<assign> ::= <int_assign>|<list_int_var>' = '<list_int>
+<for> ::= 'loopBreak = 0\nfor '<int_var>' in '<list_int>':{:\n'<code>'\nif loopBreak > loopBreakConst or stop.value:{:\nbreak\n:}loopBreak += 1\n:}'
+<int_var> ::= 'i0'|'i1'|'i2'
+<int_assign> ::= <int_var>' = '<int>
+<int> ::= <int_var>|'min('<int>', '<int>')'|'max('<int>', '<int>')'|'abs('<int>')'
+<list_int_var> ::= 'res0'|'in0'
+<list_int> ::= <list_int_var>|'list(saveRange('<int>','<int>'))'

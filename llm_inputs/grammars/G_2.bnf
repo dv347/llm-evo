@@ -1,0 +1,12 @@
+<predefined> ::= 'res0 = bool()\n'<code>
+<code> ::= <code><statement>'\n'|<statement>'\n'
+<statement> ::= <if>|<assign>
+<assign> ::= <bool_var>' = '<bool>
+<if> ::= 'if '<bool>':{:\n'<code>':}'|'if '<bool>':{:\n'<code>':}else:{:\n'<code>':}'
+<comp_op> ::= '=='
+<bool_var> ::= 'res0'
+<bool_const> ::= 'True'|'False'
+<bool> ::= <bool_var>|<int>' '<comp_op>' '<int>|<bool_const>
+<arith_ops> ::= '+'
+<int> ::= <int_var>|<int>' '<arith_ops>' '<int>
+<int_var> ::= 'in0'|'in1'|'in2'

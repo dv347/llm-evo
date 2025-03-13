@@ -1,0 +1,11 @@
+<predefined> ::= 'loopBreakConst = 200\nres0 = ""\n'<code>
+<code> ::= <code><statement>'\n'|<statement>'\n'
+<statement> ::= <for>|<if>|<call>
+<call> ::= <string_var>' += '<string>
+<for> ::= 'loopBreak = 0\nfor c in '<string_var>':{:\n'<code>'\nif loopBreak > loopBreakConst:{:\nbreak\n:}loopBreak += 1\n:}'
+<if> ::= 'if '<bool>':{:\n'<call>'\n:}elif '<bool>':{:\n'<call>'\n:}else:{:\n'<call>':}'
+<bool> ::= <char_var>'.isalpha()'|<char_var>' == "<char_literal>"'
+<string> ::= <char_var>' * 2'|<char_var>' * 3'|<char_var>
+<char_var> ::= 'c'
+<char_literal> ::= '!'
+<string_var> ::= 'res0'|'in0'

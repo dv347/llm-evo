@@ -1,0 +1,8 @@
+<predefined> ::= 'res0 = 1.0; numerator = 1.0; denominator = 1.0\n'<code>
+<code> ::= <code><statement>'\n'|<statement>'\n'
+<statement> ::= <assign>|<for>|<func_call>
+<assign> ::= <float_var>' = '<float>|<float_var>' *= '<float>
+<for> ::= 'for i in range(1, in0 + 1):{:\n'<code>':}'
+<func_call> ::= <float_var>' = round('<float>', 5)'
+<float> ::= '('<float>'/'<float_var>')'|'('<float_var>' + 1)'|'('<float_var>' + 2)'|<float_var>|'2*i'
+<float_var> ::= 'res0'|'numerator'|'denominator'

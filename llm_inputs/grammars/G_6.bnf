@@ -1,0 +1,10 @@
+<predefined> ::= 'res0 = bool()\n'<code>
+<code> ::= <code><assign>'\n'|<assign>'\n'
+<assign> ::= <bool_var>' = '<bool>
+<comp_op> ::= '=='
+<bool_var> ::= 'res0'
+<bool> ::= <int>' '<comp_op>' '<int>
+<arith_ops> ::= '**'
+<float> ::= '1/3'|<int>' '<arith_ops>' '<float>
+<int> ::= <int_var>|'round('<float>')'|'3'|<int>' '<arith_ops>' '<int>
+<int_var> ::= 'in0'

@@ -1,0 +1,14 @@
+<predefined> ::= 'loopBreakConst = 200'
+'i0 = int()'
+'res0 = int()'
+<code>
+<code> ::= <code><statement>'\n'|<statement>'\n'
+<statement> ::= <int_assign>|<compound_stmt>
+<compound_stmt> ::= <for><if>
+<if> ::= 'if '<bool>':{:\n'<code>':}'
+<for> ::= 'loopBreak = 0\nfor '<int_var>' in range(len('<list_int_var>')):{:\n'<code>'\nif loopBreak > loopBreakConst or stop.value:{:\nbreak\n:}loopBreak += 1\n:}'
+<bool> ::= <int>' == 0'
+<int_var> ::= 'i0'|'res0'
+<int_assign> ::= <int_var>' = '<int>
+<int> ::= <int_var>|<list_int_var>'['<int_var>']'
+<list_int_var> ::= 'in0'

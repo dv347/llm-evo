@@ -1,0 +1,11 @@
+<predefined> ::= 'loopBreakConst = 200\ni0 = int()\nres0 = str()\nwords = in0.split()\n'<code>
+<code> ::= <code><statement>'\n'|<statement>'\n'
+<statement> ::= <for>|<call>|<assign>
+<assign> ::= <str_var>' += '<str>
+<for> ::= 'for '<int_var>' in range(0, len('<list_str_var>', in1)):{:\n'<assign>':}'
+<call> ::= <str_var>'.strip()'
+<int> ::= <int_var>|<int>' + '<int>
+<int_var> ::= 'i0'|'in1'
+<list_str_var> ::= 'words'
+<str> ::= '" ".join('<list_str_var>'['<int>':'<int>']) + "\n"'
+<str_var> ::= 'res0'|'in0'

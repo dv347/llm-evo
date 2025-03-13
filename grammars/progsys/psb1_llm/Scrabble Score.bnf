@@ -1,0 +1,12 @@
+<predefined> ::= 'loopBreakConst = 200\nc = str()\nres0 = int()\n'<for>
+<code> ::= <code><if>'\n'|<if>'\n'
+<int_assign> ::= <int_var>' '<arith_ops>'= '<int_const>
+<for> ::= 'loopBreak = 0\nfor c in '<string_var>':{:\n'<code>'\nif loopBreak > loopBreakConst:{:\nbreak\n:}loopBreak += 1\n:}'
+<if> ::= 'if '<char_in_check>':{:\n'<int_assign>':}'
+<char_in_check> ::= <char_var>' in "'<char_group>'"'
+<char_group> ::= 'AEILNORSTU'|'DG'|'BCMP'|'FHVWY'|'K'|'JX'|'QZ'
+<arith_ops> ::= '+'
+<int_const> ::= '1'|'2'|'3'|'4'|'5'|'8'|'10'
+<int_var> ::= 'res0'
+<string_var> ::= 'in0'
+<char_var> ::= 'c'

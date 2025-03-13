@@ -1,0 +1,12 @@
+<predefined> ::= 'loopBreakConst = 200\nres0 = []\n'<code>
+<code> ::= <code><statement>'\n'|<statement>'\n'
+<statement> ::= <for>|<if>|<call>
+<for> ::= 'loopBreak = 0\nfor c in '<string>':{:\n'<code>'\nif loopBreak > loopBreakConst:{:\nbreak\n:}loopBreak += 1\n:}'
+<if> ::= 'if '<bool>':{:\n'<call>':}'
+<call> ::= <list_int_var>'.append(int(c))'|<list_int_var>'[-1] = -'<list_int_var>'[-1]'
+<bool> ::= <int>' '<comp_op>' '<int>
+<int_var> ::= 'in0'
+<int> ::= <int_var>|'0'
+<string> ::= 'str(abs('<int_var>'))'|'reversed(str(abs('<int_var>')))'
+<comp_op> ::= '<'|'>'
+<list_int_var> ::= 'res0'

@@ -1,0 +1,12 @@
+<predefined> ::= 'loopBreakConst = 200\nres0 = int()\n'<code>
+<code> ::= <code><statement>'\n'|<statement>'\n'
+<statement> ::= <assign>|<while>|<if>
+<assign> ::= <int_var>' '<arith_ops>'= '<int>|<int_var>' = '<int>
+<while> ::= 'loopBreak = 0\nwhile '<bool>':{:\n'<code>'\nif loopBreak > loopBreakConst:{:\nbreak\n:}loopBreak += 1\n:}'
+<if> ::= 'if '<bool>':{:\n'<assign>':}else:{:\n'<assign>':}'
+<comp_op> ::= '!='|'=='
+<bool> ::= <int>' '<comp_op>' '<int_const>
+<arith_ops> ::= '+'|'*'|'//'
+<int_const> ::= '0'|'1'|'2'|'3'
+<int> ::= <int_var>|<int_const>|'('<int>' '<arith_ops>' '<int_const>')'|'mod('<int_var>', '<int_const>')'
+<int_var> ::= 'in0'|'res0'

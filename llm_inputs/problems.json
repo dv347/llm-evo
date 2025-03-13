@@ -1,0 +1,54 @@
+{
+    "problems": [
+        {
+            "description": "Given the lengths of the three sides of a triangle. Return True if the three sides form a right-angled triangle, False otherwise. A right-angled triangle is a triangle in which one angle is a right angle or 90 degrees.",
+            "program": "def evolve(in0, in1, in2):\n    f0 = float(); f1 = float(); f2 = float()\n    b0 = bool(); b1 = bool(); b2 = bool()\n    res0 = bool()\n    f0 = in0*in0\n    f1 = in1*in1\n    f2 = in2*in2\n    b0 = f0 == f1 + f2\n    b1 = f1 == f0 + f2\n    b2 = f2 == f0 + f1\n    res0 = b0 or b1 or b2\n    return res0",
+            "desired_minimal_grammar": "<predefined> ::= 'f0 = float(); f1 = float(); f2 = float()\\nb0 = bool(); b1 = bool(); b2 = bool()\\nres0 = bool()\\n'<code>\n<code> ::= <code><assign>'\\n'|<assign>'\\n'\n<assign> ::= <bool_var>' = '<bool>|<float_var>' = '<float>\n<comp_op> ::= '=='\n<bool_var> ::= 'b0'|'b1'|'b2'|'res0'\n<bool> ::= <bool_var>|'( '<bool>' '<bool_op>' '<bool>' )'|<float>' '<comp_op>' '<float>\n<bool_op> ::= 'or'\n<arith_ops> ::= '*'\n<float> ::= '( '<float>' '<arith_ops>' '<float>' )'\n<float_var> ::= 'f0'|'f1'|'f2'|'in0'|'in1'|'in2'"
+        },
+        {
+            "description": "Given an integer, return True if the integer is prime, False otherwise.",
+            "program": "def evolve(in0):\n    loopBreakConst = 200\n    i0 = int()\n    res0 = bool()\n    res0 = True\n    loopBreak = 0\n    for i0 in range(2, in0):\n        if mod(in0, i0) != 0:\n            res0 = False\n        if loopBreak > loopBreakConst:\n            break\n        loopBreak += 1\n    return res0",
+            "desired_minimal_grammar": "<predefined> ::= 'loopBreakConst = 200\\ni0 = int()\\nres0 = bool()\\n'<code>\n<code> ::= <code><statement>'\\n'|<statement>'\\n'\n<statement> ::= <assign>|<for>|<if>\n<assign> ::= <bool_var>' = '<bool_const>\n<for > ::= 'loopBreak = 0\\nfor i0 in range('<int>','<int_var>'):{:\\n'<code>'\\nif loopBreak > loopBreakConst:{:\\nbreak\\n:}loopBreak += 1\\n:}'\n<if > ::= 'if '<bool> ':{:\\ n '<code>':}'\n<comp_op> ::= '!='\n<bool> ::= <int>' '<comp_op>' '<int>\n<bool_const> ::= 'True'|'False'\n<bool_var> ::= 'res0'\n<int> ::= <int_var>|'0'|'2'|'mod('<int_var>', '<int_var>')'\n<int_var> ::= 'i0'|'in0'"
+        },
+        {
+            "description": "Given three integers, return true if one of the numbers is equal to the sum of the other two, False otherwise.",
+            "program": "def evolve(in0, in1, in2):\n    res0 = bool()\n    if (in0+in1==in2):\n        res0 = True\n    if (in0+in2==in1):\n        res0 = True\n    if (in1+in2==in0):\n        res0 = True\n    return res0",
+            "desired_minimal_grammar": "<predefined> ::= 'res0 = bool()\\n'<code>\n<code> ::= <code><statement>'\\n'|<statement>'\\n'\n<statement> ::= <if>|<assign>\n<assign> ::= <bool_var>' = '<bool>\n<if> ::= 'if '<bool>':{:\\n'<code>':}'|'if '<bool>':{:\\n'<code>':}else:{:\\n'<code>':}'\n<comp_op> ::= '=='\n<bool_var> ::= 'res0'\n<bool_const> ::= 'True'|'False'\n<bool> ::= <bool_var>|<int>' '<comp_op>' '<int>|<bool_const>\n<arith_ops> ::= '+'\n<int> ::= <int_var>|<int>' '<arith_ops>' '<int>\n<int_var> ::= 'in0'|'in1'|'in2'"
+        },
+        {
+            "description": "Given a list of integers, return True if they are sorted in ascending order, False otherwise.",
+            "program": "def evolve(in0):\n    loopBreakConst = 200\n    i0 = int()\n    res0 = bool()\n    res0 = True\n    loopBreak = 0\n    for i0 in range(1, len(in0)):\n        if in0[i0] < in0[i0 - 1]:\n            res0 = False\n        if loopBreak > loopBreakConst:\n            break\n        loopBreak += 1\n    return res0",
+            "desired_minimal_grammar": "<predefined> ::= 'loopBreakConst = 200\\ni0 = int()\\nres0 = bool()\\n'<code>\n<code> ::= <code><statement>'\\n'|<statement>'\\n'\n<statement> ::= <assign>|<for>|<if>\n<assign> ::= <bool_var>' = '<bool_const>\n<for > ::= 'loopBreak = 0\\nfor i0 in range(1, len'<list_int_var>')):{:\\n '<code>'\\nif loopBreak > loopBreakConst:{:\\nbreak\\n:}loopBreak += 1\\n:}'\n<if > ::= 'if '<bool> ':{:\\ n '<code>':}'\n<comp_op> ::= '<'\n<bool> ::= <int>' '<comp_op>' '<int>\n<bool_const> ::= 'True'|'False'\n<bool_var> ::= 'res0'\n<int> ::= <int_var>|<list_int_var>'['<int_var>']'|<list_int_var>'['<int_var>'-1]'\n<int_var> ::= 'i0'\n<list_int_var> ::= 'in0'"
+        },
+        {
+            "description": "Given a list of floats, return the maximum without using the max() function.",
+            "program": "def evolve(in0):\n    loopBreakConst = 200\n    f0 = float()\n    res0 = float()\n    res0 = in0[0]\n    loopBreak = 0\n    for f0 in in0:\n        if f0 > res0:\n            res0 = f0\n        if loopBreak > loopBreakConst:\n            break\n        loopBreak += 1\n    return res0",
+            "desired_minimal_grammar": "<predefined> ::= 'loopBreakConst = 200\\nf0 = float()\\nres0 = float()\\n'<code>\n<code> ::= <code><statement>'\\n'|<statement>'\\n'\n<statement> ::= <float_assign>|<for>|<if>\n<float_assign> ::= <float_var>' = '<float>\n<for> ::= 'loopBreak = 0\\nfor '<float_var>' in '<list_float_var>':{:\\n'<code>'\\nif loopBreak > loopBreakConst or stop.value:{:\\nbreak\\n:}loopBreak += 1\\n:}'\n<if> ::= 'if '<bool>':{:\\n'<code>':}'\n<comp_op> ::= '>'\n<bool> ::= <float>' '<comp_op>' '<float>\n<float_var> ::= 'f0'|'res0'\n<float> ::= <float_var>|<list_float_var>'[0]'\n<list_floar_var> ::= 'in0'"
+        },
+        {
+            "description": "Given a positive floating point number, it can be decomposed into an integer part (largest integer smaller than the given number) and decimal (the leftover part always smaller than one). Return the decimal part.",
+            "program": "def evolve(in0):\n    i0 = int()\n    res0 = float()\n    i0 = int(in0)\n    res0 = in0 - i0\n    return res0",
+            "desired_minimal_grammar": "<predefined> ::= 'i0 = int()\\nres0 = float()\\n'<code>\n<code> ::= <code><assign>'\\n'|<assign>'\\n'\n<assign> ::= <int_assign>|<float_assign>\n<int_assign> ::= <int_var>' = '<int>\n<float_assign> ::= <float_var>' = '<float>\n<arith_ops> ::= '-'\n<int> ::= 'int('<float_var>')'\n<int_var> ::= 'i0'\n<float> ::= <float>' '<arith_ops>' '<int>|<int>' '<arith_ops>' '<float>\n<float_var> ::= 'in0'|'res0'"
+        },
+        {
+            "description": "Given an integer, return True if the integer is a cube of some other integer number, False otherwise.",
+            "program": "def evolve(in0):\n    res0 = bool()\n    res0 = round(in0 ** (1. / 3)) ** 3 == in0\n    return res0",
+            "desired_minimal_grammar": "<predefined> ::= 'res0 = bool()\\n'<code>\n<code> ::= <code><assign>'\\n'|<assign>'\\n'\n<assign> ::= <bool_var>' = '<bool>\n<comp_op> ::= '=='\n<bool_var> ::= 'res0'\n<bool> ::= <int>' '<comp_op>' '<int>\n<arith_ops> ::= '**'\n<float> ::= '1/3'|<int>' '<arith_ops>' '<float>\n<int> ::= <int_var>|'round('<float>')'|'3'|<int>' '<arith_ops>' '<int>\n<int_var> ::= 'in0'"
+        },
+        {
+            "description": "Given a list of integers, add the elements that are at odd indices.",
+            "program": "def evolve(in0):\n    loopBreakConst = 200\n    i0 = int()\n    res0 = int()\n    loopBreak = 0\n    for i0 in range(len(in0)):\n        if mod(i0, 2) == 0:\n            res0 += in0[i0]\n        if loopBreak > loopBreakConst:\n            break\n        loopBreak += 1\n    return res0",
+            "desired_minimal_grammar": "<predefined> ::= 'loopBreakConst = 200\\ni0 = int()\\nres0 = int()\\n'<code>\n<code> ::= <code><statement>'\\n'|<statement>'\\n'\n<statement> ::= <assign>|<for>|<if>\n<assign> ::= <int_var>' '<arith_ops>'= '<int>\n<for > ::= 'loopBreak = 0\\nfor i0 in range(len('<list_int_var>')):{:\\n'<code>'\\nif loopBreak > loopBreakConst:{:\\nbreak\\n:}loopBreak += 1\\n:}'\n<if > ::= 'if '<bool>':{:\\ n '<code>':}'\n<comp_op> ::= '=='\n<bool> ::= <int>' '<comp_op>' '<int>\n<arith_ops> ::= '+'\n<int> ::= <int_var>|'0'|'mod('<int>', 2)'\n<int_var> ::= 'i0'|'res0'\n<list_int_var> ::= 'in0'"
+        },
+        {
+            "description": "Given a list of floats, return the length of that list without using the len() function.",
+            "program": "def evolve(in0):\n    loopBreakConst = 200\n    f0 = float()\n    res0 = int()\n    loopBreak = 0\n    for f0 in in0:\n        res0 += 1\n        if loopBreak > loopBreakConst:\n            break\n        loopBreak += 1\n    return res0",
+            "desired_minimal_grammar": "<predefined> ::= 'loopBreakConst = 200\\nf0 = float()\\nres0 = int()\\n'<code>\n<code> ::= <code><statement>'\\n'|<statement>'\\n'\n<statement> ::= <int_assign>|<for>\n<for> ::= 'loopBreak = 0\\nfor f0 in '<list_float_var>':{:\\n'<code>'\\nif loopBreak > loopBreakConst or stop.value:{:\\nbreak\\n:}loopBreak += 1\\n:}'\n<int_assign> ::= <int_var>' '<arith_ops>'= '<int>\n<arith_ops> ::= '+'\n<int> ::= <int_var>|'1'\n<int_var> ::= 'res0'\n<list_floar_var> ::= 'in0'"
+        },
+        {
+            "description": "Given a list of floats, return all positive numbers in the list.",
+            "program": "def evolve(in0):\n    loopBreakConst = 200\n    f0 = float()\n    res0 = []\n    loopBreak = 0\n    for f0 in in0:\n        if f0 == abs(f0):\n            res0.append(f0)\n        if loopBreak > loopBreakConst:\n            break\n        loopBreak += 1\n    return res0",
+            "desired_minimal_grammar": "<predefined> ::= 'loopBreakConst = 200\\nf0 = float()\\nres0 = []\\n'<code>\n<code> ::= <code><statement>'\\n'|<statement>'\\n'\n<statement> ::= <call>|<for>|<if>\n<call> ::= 'res0.append('<float_var>')'\n<for> ::= 'loopBreak = 0\\nfor f0 in '<list_float_var>':{:\\n'<code>'\\nif loopBreak > loopBreakConst:{:\\nbreak\\n:}loopBreak += 1\\n:}'\n<if> ::= 'if '<bool>':{:\\n'<code>':}'\n<comp_op> ::= '=='\n<bool> ::= <float>' '<comp_op>' '<float>\n<float_var> ::= 'f0'\n<float> ::= <float_var>|'abs('<float_var>')'\n<list_floar_var> ::= 'in0'|'res0'"
+        }
+    ]
+}

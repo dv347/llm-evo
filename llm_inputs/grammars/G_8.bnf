@@ -1,0 +1,9 @@
+<predefined> ::= 'loopBreakConst = 200\nf0 = float()\nres0 = int()\n'<code>
+<code> ::= <code><statement>'\n'|<statement>'\n'
+<statement> ::= <int_assign>|<for>
+<for> ::= 'loopBreak = 0\nfor f0 in '<list_float_var>':{:\n'<code>'\nif loopBreak > loopBreakConst or stop.value:{:\nbreak\n:}loopBreak += 1\n:}'
+<int_assign> ::= <int_var>' '<arith_ops>'= '<int>
+<arith_ops> ::= '+'
+<int> ::= <int_var>|'1'
+<int_var> ::= 'res0'
+<list_floar_var> ::= 'in0'

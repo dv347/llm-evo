@@ -1,0 +1,8 @@
+<predefined> ::= 'loopBreakConst = 200\ni0 = int()\nres0 = []\n'<code>
+<code> ::= <code><statement>'\n'|<statement>'\n'
+<statement> ::= <for>|<call>
+<for> ::= 'loopBreak = 0\nfor i0 in range(len('<list_int_var>')):{:\n'<code>'\nif loopBreak > loopBreakConst:{:\nbreak\n:}loopBreak += 1\n:}'
+<call> ::= 'res0.append('<int>')'
+<int> ::= <list_int_var>'['<int_var>']'|<int>' + '<int>|<int_var>
+<int_var> ::= 'i0'
+<list_int_var> ::= 'in0'|'in1'

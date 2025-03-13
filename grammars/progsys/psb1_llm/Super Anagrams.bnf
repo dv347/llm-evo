@@ -1,0 +1,12 @@
+<predefined> ::= 'loopBreakConst = 200\nres0 = bool()\n'<code>
+<code> ::= <code><statement>'\n'|<statement>'\n'
+<statement> ::= <for>|<if>|<assign>
+<for> ::= 'loopBreak = 0\nfor c in '<string_var>':{:\n'<code>'\nif loopBreak > loopBreakConst:{:\nbreak\n:}loopBreak += 1\n:}'
+<if> ::= 'if '<bool>':{:\n'<assign>':}'
+<assign> ::= <bool_var>' = '<bool_const>
+<bool> ::= <string>'.count('<char_var>') > '<string>'.count('<char_var>')'
+<bool_const> ::= 'True'|'False'
+<bool_var> ::= 'res0'
+<string> ::= <string_var>
+<string_var> ::= 'in0'|'in1'
+<char_var> ::= 'c'

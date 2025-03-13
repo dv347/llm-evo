@@ -1,0 +1,14 @@
+<predefined> ::= 'i0 = int(); i1 = int(); i2 = int()'
+'f0 = float(); f1 = float(); f2 = float()'
+'res0 = float()'
+<code>
+<code> ::= <code><assign>'\n'|<assign>'\n'
+<assign> ::= <int_assign>|<float_assign>
+<int_var> ::= 'in0'
+<int_assign> ::= <int_var>' = '<int>|<int_var>' '<arith_ops>'= '<int>
+<int> ::= <int_var>|<arith_prefix><int>|'( '<int>' '<arith_ops>' '<int>' )'
+<arith_ops> ::= '+'|'-'
+<arith_prefix> ::= '+'|'-'
+<float> ::= <int>|<float_var>|<arith_prefix><float>|'( '<float>' '<arith_ops>' '<float>' )'|'( '<int>' '<arith_ops>' '<float>' )'|'( '<float>' '<arith_ops>' '<int>' )'
+<float_var> ::= 'res0'|'in1'
+<float_assign> ::= <float_var>' = '<float>|<float_var>' '<arith_ops>'= '<float>

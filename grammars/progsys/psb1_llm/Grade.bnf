@@ -1,0 +1,11 @@
+<predefined> ::= 'res0 = str()\n'<code>
+<code> ::= <code><statement>'\n'|<statement>'\n'
+<statement> ::= <if>|<assign>
+<assign> ::= <str_var>' = '<str>
+<if> ::= 'if '<bool>':{:\n'<code>':}'|'if '<bool>':{:\n'<code>':}else:{:\n'<code>':}'
+<comp_op> ::= '>='|'<' 
+<bool> ::= 'in4 '<comp_op>' '<int>
+<str> ::= '"A"'|'"B"'|'"C"'|'"D"'|'"F"'
+<int> ::= <int_var>
+<int_var> ::= 'in0'|'in1'|'in2'|'in3'|'in4'
+<str_var> ::= 'res0'

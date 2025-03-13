@@ -1,0 +1,11 @@
+<predefined> ::= 'loopBreakConst = 200\nf0 = float()\nres0 = []\n'<code>
+<code> ::= <code><statement>'\n'|<statement>'\n'
+<statement> ::= <call>|<for>|<if>
+<call> ::= 'res0.append('<float_var>')'
+<for> ::= 'loopBreak = 0\nfor f0 in '<list_float_var>':{:\n'<code>'\nif loopBreak > loopBreakConst:{:\nbreak\n:}loopBreak += 1\n:}'
+<if> ::= 'if '<bool>':{:\n'<code>':}'
+<comp_op> ::= '=='
+<bool> ::= <float>' '<comp_op>' '<float>
+<float_var> ::= 'f0'
+<float> ::= <float_var>|'abs('<float_var>')'
+<list_floar_var> ::= 'in0'|'res0'

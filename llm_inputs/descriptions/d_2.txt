@@ -1,0 +1,1 @@
+Given three integers, return true if one of the numbers is equal to the sum of the other two, False otherwise.

@@ -1,0 +1,12 @@
+<predefined> ::= 'loopBreakConst = 200'
+'s0 = str()'
+'res0 = []'
+<code>
+<code> ::= <code><statement>'\n'|<statement>'\n'
+<statement> ::= <for>|<call>
+<call> ::= <list_int_var>'.append('<int>')'|<list_int_var>' += ['<int>']'|<list_int_var>'.extend(['<int>'])'
+<for> ::= 'loopBreak = 0\nfor '<string_var>' in reversed('<list_string_var>'):{:\n'<code>'\nif loopBreak > loopBreakConst or stop.value:{:\nbreak\n:}loopBreak += 1\n:}'
+<int> ::= 'len('<string_var>')'
+<string_var> ::= 's0'
+<list_string_var> ::= 'in0'
+<list_int_var> ::= 'res0'

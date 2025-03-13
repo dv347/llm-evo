@@ -1,0 +1,11 @@
+<predefined> ::= 'i0 = int(); i1 = int(); i2 = int(); res0 = int()'
+<code>
+<code> ::= <statement>'\n'|<statement>'\n'
+<statement> ::= <assign>|<if>
+<if> ::= 'if '<bool>':{:\n'<code>':}'|'if '<bool>':{:\n'<code>':}else:{:\n'<code>':}'
+<assign> ::= <int_var>' = '<int>
+<int_var> ::= 'in0'|'in1'|'in2'|'res0'
+<int> ::= <int_var>|'( '<int>' '<arith_ops>' '<int>' )'
+<arith_ops> ::= '+'|'-'|'*'
+<comp_op> ::= '<'|'>'|'=='
+<bool> ::= <int>' '<comp_op>' '<int>|'not '<bool>

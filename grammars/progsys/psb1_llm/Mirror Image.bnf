@@ -1,0 +1,9 @@
+<predefined> ::= 'res0 = bool()\n'<code>
+<code> ::= <code><assign>'\n'|<assign>'\n'
+<assign> ::= <bool_var>' = '<bool>
+<bool_var> ::= 'res0'
+<bool> ::= <bool_var>|<list_int>' '<comp_op>' '<list_int>
+<comp_op> ::= '=='|'!='
+<list_int> ::= <list_int_var>|<list_reverse>
+<list_int_var> ::= 'in0'|'in1'
+<list_reverse> ::= <list_int_var>'[::-1]'

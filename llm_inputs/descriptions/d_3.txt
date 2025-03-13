@@ -1,0 +1,1 @@
+Given a list of integers, return True if they are sorted in ascending order, False otherwise.

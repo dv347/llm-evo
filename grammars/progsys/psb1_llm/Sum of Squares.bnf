@@ -1,0 +1,10 @@
+<predefined> ::= 'loopBreakConst = 101'
+'forCounter = int()'
+'res0 = int()'
+<statement>
+<statement> ::= <int_assign>|<for>
+<for> ::= 'loopBreak = 0\nfor forCounter in range('<int_var>' + 1):{:\n'<statement>'\nif loopBreak > loopBreakConst or stop.value:{:\nbreak\n:}loopBreak += 1\n:}'
+<int_var> ::= 'forCounter'|'res0'|'in0'
+<int_assign> ::= <int_var>' '<arith_ops>'= '<int>
+<int> ::= <int_var>|<int_var>**2
+<arith_ops> ::= '+'

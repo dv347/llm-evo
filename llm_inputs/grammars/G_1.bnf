@@ -1,0 +1,10 @@
+<predefined> ::= 'f0 = float(); f1 = float(); f2 = float()\nb0 = bool(); b1 = bool(); b2 = bool()\nres0 = bool()\n'<code>
+<code> ::= <code><assign>'\n'|<assign>'\n'
+<assign> ::= <bool_var>' = '<bool>|<float_var>' = '<float>
+<comp_op> ::= '=='
+<bool_var> ::= 'b0'|'b1'|'b2'|'res0'
+<bool> ::= <bool_var>|'( '<bool>' '<bool_op>' '<bool>' )'|<float>' '<comp_op>' '<float>
+<bool_op> ::= 'or'
+<arith_ops> ::= '*'
+<float> ::= '( '<float>' '<arith_ops>' '<float>' )'
+<float_var> ::= 'f0'|'f1'|'f2'|'in0'|'in1'|'in2'

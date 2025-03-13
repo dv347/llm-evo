@@ -1,0 +1,12 @@
+<predefined> ::= 'loopBreakConst = 200\ns0 = str()\nres0 = int()\nvowels = "aeiou"\n'<for>
+<code> ::= <code><statement>'\n'|<statement>'\n'
+<statement> ::= <int_assign>|<if>
+<int_assign> ::= <int_var>' '<arith_ops>'= '<int_const>
+<for> ::= 'loopBreak = 0\nfor s0 in '<string_var>':{:\n'<code>'\nif loopBreak > loopBreakConst:{:\nbreak\n:}loopBreak += 1\n:}'
+<if> ::= 'if '<bool>':{:\n'<code>':}'
+<comp_op> ::= 'in'
+<bool> ::= <string_var>' '<comp_op>' '<string_var>
+<int_const> ::= '1'
+<int_var> ::= 'res0'
+<string_var> ::= 's0'|'vowels'|'in0'
+<arith_ops> ::= '+'

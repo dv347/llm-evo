@@ -1,0 +1,11 @@
+<predefined> ::= 'loopBreakConst = 200\ni0 = int()\nc= str()\nres0 = str()\n'<code>
+<code> ::= <code><statement>'\n'|<statement>'\n'
+<statement> ::= <int_assign>|<str_assign>|<for>
+<for> ::= 'loopBreak = 0\nfor c in in0:{:\n'<code>'\nif loopBreak > loopBreakConst:{:\nbreak\n:}loopBreak += 1\n:}'
+<int_assign> ::= <int_var>' '<arith_ops>'= '<int>|<int_var>' = '<int>
+<str_assign> ::= 'res0 = '<string>
+<arith_ops> ::= '+'
+<int> ::= <int_var>|'ord('<char_var>')'|'ord(" ")'|'mod('<int_var>', 64)'|<int>' '<arith_ops>' '<int>
+<int_var> ::= 'i0'
+<string> ::= 'chr('<int_var>')'
+<char_var> ::= 'c'

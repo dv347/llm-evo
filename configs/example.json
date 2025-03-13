@@ -1,0 +1,41 @@
+{
+    "experiment_name": "number_io_default",
+    "comparator": null,
+    "benchmark": {
+        "type": "single",
+        "suite_name": "psb1",
+        "problem_name": "Number IO"
+    },
+    "grammar": {
+        "type": "default",
+        "grammar_file": null,
+        "embed_file": null
+    },
+    "random_seed": null,
+    "num_runs": 100,
+    "generations": 50,
+    "population_size": 500,
+    "max_genome_length": 500,
+    "max_init_tree_depth": 10,
+    "max_tree_depth": 17,
+    "crossover": {
+        "crossover": "variable_onepoint",
+        "no_crossover_invalids": true,
+        "crossover_probability": 0.9
+    },
+    "mutation": {
+        "mutation": "int_flip_per_codon",
+        "no_mutation_invalids": true,
+        "mutation_probability": null,
+        "mutation_events": null
+    },
+    "selection": {
+        "selection": "tournament",
+        "tournament_size": 2,
+        "selection_proportion": null
+    },
+    "replacement": {
+        "replacement": "generational",
+        "elite_size": null
+    }
+}

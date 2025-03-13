@@ -1,0 +1,9 @@
+<predefined> ::= 'res0 = str()\nres1 = int()\n'<code>
+<code> ::= <code><statement>'\n'|<statement>'\n'
+<statement> ::= <assign>
+<assign> ::= <string_var>' = '<string>|<int_var>' = '<int>
+<string_var> ::= 'res0'|'in0'
+<int_var> ::= 'res1'
+<string> ::= <string_var>|<string_var>'.replace('<char>', '<char>')'
+<int> ::= 'len('<string_var>')'|<string_var>'.count(" ")'|<int>' - '<int>
+<char> ::= '" "'|'"\n"'

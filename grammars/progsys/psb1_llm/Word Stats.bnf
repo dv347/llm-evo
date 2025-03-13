@@ -1,0 +1,21 @@
+<predefined> ::= 'loopBreakConst = 200\nres0 = []\nres1 = int()\nres2 = float()\ns0 = str()\n'<code>
+<code> ::= <code><statement>'\n'|<statement>'\n'
+<statement> ::= <assign>|<for>|<if>|<call>
+<assign> ::= <int_var>' = '<int>|<float_var>' = '<float>|<string_var>' = '<string>|<list_int_var>' = '<list_int>|<list_string_var>' = '<list_string>
+<call> ::= <list_int_var>'.append('<int>')'|<list_string_var>' = saveSplit('<string>', '<string>')'
+<for> ::= 'loopBreak = 0\nfor '<string_var>' in '<list_string_var>':{:\n'<code>'\nif loopBreak > loopBreakConst:{:\nbreak\n:}loopBreak += 1\n:}'
+<if> ::= 'if '<bool>':{:\n'<code>':}'
+<comp_op> ::= '=='|'!='|'>'|'<'
+<bool> ::= <int>' '<comp_op>' '<int>|<float>' '<comp_op>' '<float>|<bool_const>
+<bool_const> ::= 'True'|'False'
+<int_var> ::= 'res1'
+<int> ::= <int_var>|'0'|'len('<list_string_var>')'|'count('<string_var>', '<string>')'
+<float_var> ::= 'res2'
+<float> ::= <int>' / '<int>|<float_var>
+<string_var> ::= 's0'
+<string> ::= <string_var>|<string_literal>
+<string_literal> ::= ' '|'\\n'|'.'|'!'|'?'
+<list_int_var> ::= 'res0'
+<list_int> ::= <list_int_var>
+<list_string_var> ::= 'ls0'
+<list_string> ::= <list_string_var>|'saveSplit('<string>', '<string>')'
