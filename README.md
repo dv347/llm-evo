@@ -1,6 +1,6 @@
 # Overview
 
-This is the replication package for a paper currently under peer review. The repository contains the implementation and experimental framework for exploring program synthesis using specialized grammars predicted by large language models (LLMs).
+This is the replication package for the GECCO 2025 paper *Program Synthesis with LLM-Predicted Minimal Specialized Grammars*. The repository contains the implementation and experimental framework for exploring program synthesis using specialized grammars predicted by large language models (LLMs).
 
 # PonyGE2
 
